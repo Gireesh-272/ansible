@@ -1,11 +1,13 @@
 - name: loops
   hosts: localhost
+  become: yes
   tasks:
   - name: print persons
-    ansible.builtin.debug:
-      msg: "Hello {{item}}" #item is  a default keyword
+    ansible.builtin.package:
+      name: "{{item}}" #item is  a default keyword
+      state: present
     loop:
-    - lokesh
-    - gireesh
-    - tessy
-    - budddy
+    - git
+    - mysql
+    - postfix
+    
