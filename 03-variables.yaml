@@ -1,10 +1,14 @@
 - name: variables from play level
   hosts: localhost
-  vars:
-    course: "Devops"
-    trainer: "gireesh"
-    duration: "110hrs"
+  vars_files:
+  - vars.yaml
+  vars:  
+     person: "gireesh from play"
+     wishes: "morning from play"
   tasks:
   - name: check variables
+    vars:
+      person: "gireesh from task"
+      wishes: "morning from task"
     ansible.builtin.debug:
-      msg: "Hi, I am learning {{course}}, Trainer is {{trainer}}, Duration is {{duration}}"
+      msg: "Hello {{person}}, good {{wishes}}"

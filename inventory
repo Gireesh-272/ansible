@@ -2,6 +2,13 @@
 192.187.56.3
 192.187.56.3
 
+[localhost]
+localhost
+
+[localhost:vars]
+person="gireesh from inventory"
+wishes="morning from inventory"
+
 [web]
 54.146.253.89
 
